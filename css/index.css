@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Oswald:wght@700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Oswald:wght@300;700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Nunito:wght@500&family=Oswald:wght@300;700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -13,8 +14,8 @@ nav {
     color: #fff;
     display: flex;
     align-items: center;
-    font-family: 'Oswald', sans-serif;
-    margin-left: 80px; }
+    margin-left: 80px;
+    font-family: 'Oswald', sans-serif; }
 
 body {
   background: #f3f4f6; }
@@ -22,18 +23,30 @@ body {
 .cards-container {
   display: flex;
   align-items: center;
-  justify-content: center; }
-
-.card {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 5px -5px 15px -3px rgba(0, 0, 0, 0.1), -5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-  height: 300px;
-  width: 250px;
-  border-radius: 10px; }
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 50px; }
+  .cards-container .card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 5px -5px 15px -3px rgba(0, 0, 0, 0.1), -5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 250px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif; }
+    .cards-container .card .card-header {
+      display: flex;
+      width: 100%;
+      justify-content: end; }
+      .cards-container .card .card-header .delete-card {
+        height: 20px;
+        margin-right: 15px;
+        margin-top: 10px;
+        cursor: pointer; }
 
 #searchbar-container {
   display: flex;
@@ -48,7 +61,8 @@ body {
     border-bottom-left-radius: 5px;
     border-right: none;
     padding-left: 5px;
-    outline: none; }
+    outline: none;
+    font-weight: 500; }
   #searchbar-container button {
     height: 30px;
     border: 1px solid #000;
@@ -57,6 +71,7 @@ body {
     border-bottom-right-radius: 5px;
     background-color: #1c1c1c;
     color: #fff;
-    padding: 0px 10px; }
+    padding: 0px 10px;
+    font-weight: 600; }
 
 /*# sourceMappingURL=index.css.map */

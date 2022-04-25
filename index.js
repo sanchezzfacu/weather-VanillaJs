@@ -11,33 +11,53 @@ function card(json) {
     this.id = json.id
     this.img = json.weather[0].icon
     this.description = json.weather[0].description
-    this.wind = json.wind.speed    
+    this.wind = json.wind.speed + 'k/h'
 }
 
 function setInput(e) {
     cityToFind = e.target.value
 }
-
 function buildCard(city) {
     const card = document.createElement('div')
-    const temp = document.createElement('h2')
+    const temp = document.createElement('h1')
     const name = document.createElement('h3')
     const country = document.createElement('h3')
+    const wind = document.createElement('h6')
+    const description = document.createElement('h5')
     const icon = document.createElement('img')
-    const btnDelete = document.createElement('button')
+    const btnDelete = document.createElement('img')
+    const cardHeader = document.createElement('div')
+    const cardInfo = document.createElement('div')
+
     btnDelete.addEventListener('click', deleteCity)
+
     card.classList.add('card')
-    temp.innerHTML = city.temp + '°'
-    name.innerHTML = city.name
+
+    cardInfo.classList.add('card-info')
+    temp.classList.add('temp')
+
+    cardHeader.classList.add('card-header')
+    btnDelete.classList.add('delete-card')
+
+    description.innerText = city.description
+    wind.innerText = 'wind: ' + city.wind
+    temp.innerText = city.temp + '°'
+    name.innerText = city.name
+    
     icon.src = `https://openweathermap.org/img/wn/${city.img}@2x.png`
+    btnDelete.src = './x.png'
+
     country.innerHTML = city.country
-    btnDelete.innerHTML = 'x'
     btnDelete.value = city.id
+    
+    card.appendChild(cardHeader)
+    cardHeader.appendChild(btnDelete)
     card.appendChild(name)
-    card.appendChild(temp)
+    card.appendChild(description)
     card.appendChild(icon)
-    card.appendChild(country)
-    card.appendChild(btnDelete)
+    card.appendChild(temp)
+    card.appendChild(wind)
+    // card.appendChild(country)
 
     return card
 }
@@ -55,16 +75,13 @@ async function addCity() {
     let api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityToFind}&appid=7f210d5570077900ff87e63e6b354f27&units=metric`)
     let info = await api.json()
     const newCard = new card(info)
-    console.log(info)
     cities.push(newCard)
     cityToFind = ''
     displayCards()
 }
 
 function deleteCity(e) {
-    console.log(e.target.value)
     cities.filter(el => el.id !== e.target.value)
+    console.log(cities)
     displayCards()
 }
-
-displayCards()
