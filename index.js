@@ -11,7 +11,7 @@ function card(json) {
     this.id = json.id
     this.img = json.weather[0].icon
     this.description = json.weather[0].description
-    this.wind = json.wind.speed + 'k/h'
+    this.wind = json.wind.speed + ' k/h'
 }
 
 function setInput(e) {
@@ -21,17 +21,21 @@ function buildCard(city) {
     const card = document.createElement('div')
     const temp = document.createElement('h1')
     const name = document.createElement('h3')
-    const country = document.createElement('h3')
     const wind = document.createElement('h6')
     const description = document.createElement('h5')
     const icon = document.createElement('img')
     const btnDelete = document.createElement('img')
     const cardHeader = document.createElement('div')
     const cardInfo = document.createElement('div')
+    const cityDescription = document.createElement('div')
 
     btnDelete.addEventListener('click', deleteCity)
 
     card.classList.add('card')
+
+    cityDescription.classList.add('city-description-container')
+    cityDescription.appendChild(name)
+    cityDescription.appendChild(description)
 
     cardInfo.classList.add('card-info')
     temp.classList.add('temp')
@@ -47,17 +51,14 @@ function buildCard(city) {
     icon.src = `https://openweathermap.org/img/wn/${city.img}@2x.png`
     btnDelete.src = './x.png'
 
-    country.innerHTML = city.country
     btnDelete.value = city.id
     
     card.appendChild(cardHeader)
     cardHeader.appendChild(btnDelete)
-    card.appendChild(name)
-    card.appendChild(description)
+    card.appendChild(cityDescription)
     card.appendChild(icon)
     card.appendChild(temp)
     card.appendChild(wind)
-    // card.appendChild(country)
 
     return card
 }

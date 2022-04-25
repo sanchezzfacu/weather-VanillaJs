@@ -46,6 +46,12 @@ body {
         width: 250px;
         border-radius: 20px;
         font-family: 'Nunito', sans-serif;
+        .city-description-container {
+            width: 90%;
+            h3, h5 {
+                text-align: center;
+            }
+        }
         .card-header {
             display: flex;
             width: 100%;

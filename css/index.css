@@ -38,6 +38,10 @@ body {
     width: 250px;
     border-radius: 20px;
     font-family: 'Nunito', sans-serif; }
+    .cards-container .card .city-description-container {
+      width: 90%; }
+      .cards-container .card .city-description-container h3, .cards-container .card .city-description-container h5 {
+        text-align: center; }
     .cards-container .card .card-header {
       display: flex;
       width: 100%;
