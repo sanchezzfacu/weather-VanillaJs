@@ -1,40 +1,45 @@
 const buttonSearch = document.getElementsByClassName('btn-search')[0].addEventListener('click', addCity)
-const searchbar = document.getElementById('searchbar').addEventListener('change', setInput)
+const searchbar = document.getElementById('searchbar-container').addEventListener('change', setInput)
 
 let cities = []
 let cityToFind = ''
 
 function card(json) {
-    this.temp = json.main.temp
+    this.temp = json.main.temp.toString().slice(0, 2)
     this.name = json.name
     this.country = json.sys.country
     this.id = json.id
+    this.img = json.weather[0].icon
+    this.description = json.weather[0].description
+    this.wind = json.wind.speed    
 }
 
 function setInput(e) {
     cityToFind = e.target.value
 }
 
-function buildCard(city, index) {
+function buildCard(city) {
     const card = document.createElement('div')
     const temp = document.createElement('h2')
     const name = document.createElement('h3')
     const country = document.createElement('h3')
+    const icon = document.createElement('img')
     const btnDelete = document.createElement('button')
     btnDelete.addEventListener('click', deleteCity)
     card.classList.add('card')
     temp.innerHTML = city.temp + '°'
     name.innerHTML = city.name
+    icon.src = `https://openweathermap.org/img/wn/${city.img}@2x.png`
     country.innerHTML = city.country
     btnDelete.innerHTML = 'x'
     btnDelete.value = city.id
-    card.appendChild(temp)
     card.appendChild(name)
+    card.appendChild(temp)
+    card.appendChild(icon)
     card.appendChild(country)
     card.appendChild(btnDelete)
 
     return card
-
 }
 
 function buildCards(cards) {

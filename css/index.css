@@ -1,3 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Oswald:wght@700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
 
+nav {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: #1c1c1c; }
+  nav ul li {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 80px; }
+
+body {
+  background: #f3f4f6; }
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 5px -5px 15px -3px rgba(0, 0, 0, 0.1), -5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  width: 250px;
+  border-radius: 10px; }
+
+#searchbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px; }
+  #searchbar-container input {
+    height: 30px;
+    width: 250px;
+    border: 1px solid #000;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    padding-left: 5px;
+    outline: none; }
+  #searchbar-container button {
+    height: 30px;
+    border: 1px solid #000;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 0px 10px; }
 
 /*# sourceMappingURL=index.css.map */
