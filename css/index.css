@@ -34,8 +34,8 @@ body {
     flex-direction: column;
     background-color: #fff;
     box-shadow: 5px -5px 15px -3px rgba(0, 0, 0, 0.1), -5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-    height: 300px;
-    width: 250px;
+    height: 250px;
+    width: 200px;
     border-radius: 20px;
     font-family: 'Nunito', sans-serif; }
     .cards-container .card .city-description-container {
@@ -58,7 +58,7 @@ body {
   justify-content: center;
   margin: 40px; }
   #searchbar-container input {
-    height: 30px;
+    height: 40px;
     width: 250px;
     border: 1px solid #000;
     border-top-left-radius: 5px;
@@ -68,7 +68,7 @@ body {
     outline: none;
     font-weight: 500; }
   #searchbar-container button {
-    height: 30px;
+    height: 40px;
     border: 1px solid #000;
     border-left: none;
     border-top-right-radius: 5px;
@@ -76,6 +76,7 @@ body {
     background-color: #1c1c1c;
     color: #fff;
     padding: 0px 10px;
-    font-weight: 600; }
+    font-weight: 600;
+    cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,5 +1,6 @@
 const buttonSearch = document.getElementsByClassName('btn-search')[0].addEventListener('click', addCity)
 const searchbar = document.getElementById('searchbar-container').addEventListener('change', setInput)
+const input = document.querySelector('.searchbar')
 
 let cities = []
 let cityToFind = ''
@@ -17,6 +18,7 @@ function card(json) {
 function setInput(e) {
     cityToFind = e.target.value
 }
+
 function buildCard(city) {
     const card = document.createElement('div')
     const temp = document.createElement('h1')
@@ -64,25 +66,32 @@ function buildCard(city) {
 }
 
 function buildCards(cards) {
+    console.log(cards)
     return cards.map(buildCard)
 }
 
 function displayCards() {
     const cardsContainer = document.querySelector('.cards-container')
+    console.log(cities)
     buildCards(cities).map(city => cardsContainer.appendChild(city))
 }   
 
 async function addCity() {
-    let api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityToFind}&appid=7f210d5570077900ff87e63e6b354f27&units=metric`)
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityToFind}&appid=7f210d5570077900ff87e63e6b354f27&units=metric`
+    let api = await fetch(url)
     let info = await api.json()
     const newCard = new card(info)
     cities.push(newCard)
-    cityToFind = ''
+    restartInput()
+    cityToFind.length = 0;
     displayCards()
+}
+
+function restartInput () {
+    input.value = ''
 }
 
 function deleteCity(e) {
     cities.filter(el => el.id !== e.target.value)
-    console.log(cities)
     displayCards()
 }

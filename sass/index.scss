@@ -42,8 +42,8 @@ body {
         flex-direction: column;
         background-color: #fff;
         box-shadow: $shadow;
-        height: 300px;
-        width: 250px;
+        height: 250px;
+        width: 200px;
         border-radius: 20px;
         font-family: 'Nunito', sans-serif;
         .city-description-container {
@@ -73,7 +73,7 @@ body {
     justify-content: center;
     margin: 40px;
     input {
-        height: 30px;
+        height: 40px;
         width: 250px;
         border: 1px solid #000;
         border-top-left-radius: 5px;
@@ -84,7 +84,7 @@ body {
         font-weight: 500;
     }
     button {
-        height: 30px;
+        height: 40px;
         border: 1px solid #000;
         border-left: none;
         border-top-right-radius: 5px;
@@ -93,6 +93,7 @@ body {
         color: #fff;
         padding: 0px 10px;
         font-weight: 600;
+        cursor: pointer;
     }   
 
 }
