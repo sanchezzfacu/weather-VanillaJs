@@ -1,5 +1,4 @@
 $shadow: 5px -5px 15px -3px rgba(0,0,0,0.1),-5px 5px 15px 5px rgba(0,0,0,0.1);
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Oswald:wght@300;700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&family=Lato&family=League+Spartan&family=Nunito:wght@500&family=Oswald:wght@300;700&family=Poppins:wght@700&family=Source+Sans+Pro:wght@200;300;600&display=swap');
 
 * {
@@ -14,18 +13,23 @@ nav {
     height: 100px;
     background: #1c1c1c;
     ul {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
         li {
             color: #fff;
             display: flex;
             align-items: center;
-            margin-left: 80px;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Nunito', sans-serif;
+            a {
+                color: #fff;
+            }
         }
     }
 }
 
 body {
-    background: rgb(243, 244, 246);
+    background: #f3f4f6;
 }
 
 .cards-container {
@@ -42,7 +46,6 @@ body {
         flex-direction: column;
         background-color: #fff;
         box-shadow: $shadow;
-        height: 250px;
         width: 200px;
         border-radius: 20px;
         font-family: 'Nunito', sans-serif;
@@ -62,6 +65,9 @@ body {
                 margin-top: 10px;
                 cursor: pointer;
             }
+        }
+        h6 {
+            margin-bottom: 10px;
         }
     }
 }

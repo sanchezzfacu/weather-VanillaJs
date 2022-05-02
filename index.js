@@ -35,15 +35,15 @@ function buildCard(city) {
 
     card.classList.add('card')
 
-    cityDescription.classList.add('city-description-container')
     cityDescription.appendChild(name)
     cityDescription.appendChild(description)
-
+    
+    cityDescription.classList.add('city-description-container')
     cardInfo.classList.add('card-info')
     temp.classList.add('temp')
-
     cardHeader.classList.add('card-header')
     btnDelete.classList.add('delete-card')
+    wind.classList.add('wind')
 
     description.innerText = city.description
     wind.innerText = 'wind: ' + city.wind
@@ -55,8 +55,8 @@ function buildCard(city) {
 
     btnDelete.value = city.id
     
-    card.appendChild(cardHeader)
     cardHeader.appendChild(btnDelete)
+    card.appendChild(cardHeader)
     card.appendChild(cityDescription)
     card.appendChild(icon)
     card.appendChild(temp)
@@ -66,14 +66,15 @@ function buildCard(city) {
 }
 
 function buildCards(cards) {
-    console.log(cards)
     return cards.map(buildCard)
 }
 
 function displayCards() {
     const cardsContainer = document.querySelector('.cards-container')
-    console.log(cities)
-    buildCards(cities).map(city => cardsContainer.appendChild(city))
+    let container = []
+    let pointer = cities.length - 1 
+    container.push(cities[pointer])
+    buildCards(container).map(city => cardsContainer.appendChild(city))
 }   
 
 async function addCity() {
