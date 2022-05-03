@@ -8,7 +8,8 @@ nav {
   display: flex;
   align-items: center;
   height: 100px;
-  background: #1c1c1c; }
+  background: #1c1c1c;
+  background: #001220; }
   nav ul {
     display: flex;
     justify-content: space-around;
@@ -22,7 +23,10 @@ nav {
         color: #fff; }
 
 body {
-  background: #f3f4f6; }
+  background-image: url("../background.png");
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 .cards-container {
   display: flex;
@@ -36,7 +40,7 @@ body {
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #d2c8c8;
     box-shadow: 5px -5px 15px -3px rgba(0, 0, 0, 0.1), -5px 5px 15px 5px rgba(0, 0, 0, 0.1);
     width: 200px;
     border-radius: 20px;
@@ -60,8 +64,7 @@ body {
 #searchbar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 40px; }
+  justify-content: center; }
   #searchbar-container input {
     height: 40px;
     width: 250px;
@@ -69,7 +72,7 @@ body {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-right: none;
-    padding-left: 5px;
+    padding-left: 10px;
     outline: none;
     font-weight: 500; }
   #searchbar-container button {
@@ -78,10 +81,12 @@ body {
     border-left: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: #1c1c1c;
+    background-color: #fff;
     color: #fff;
     padding: 0px 10px;
     font-weight: 600;
     cursor: pointer; }
+    #searchbar-container button img {
+      padding-right: 5px; }
 
 /*# sourceMappingURL=index.css.map */
